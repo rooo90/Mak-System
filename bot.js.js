@@ -4,8 +4,8 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-
-client.on('message', msg => {
+    if (allowed["allowed"].includes(message.author.id)) {
+        //client.on('message', msg => {
   if(msg.content === '*hide') {
     msg.guild.channels.forEach(c => {
       c.overwritePermissions(msg.guild.id, {
@@ -431,8 +431,13 @@ const developers = ["544438287838871552"]
 client.on('message', message => {
 	
 
-}
-});
+    } else {
+        return;
+    }
+
+
+	  }
+})
 
 
 
